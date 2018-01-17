@@ -1,15 +1,125 @@
 ﻿<div class="col-md-6 col-md-offset-3">
         <h2>Add Individual</h2>
         <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
-                <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid }">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required />
+                <div *ngIf="f.submitted && !firstname.valid" class="help-block">First Name is required</div>
             </div>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
-                <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid }">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" required />
+                <div *ngIf="f.submitted && !lastname.valid" class="help-block">Last Name is required</div>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
+                <label for="address1">Address1</label>
+                <input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required />
+                <div *ngIf="f.submitted && !address1.valid" class="help-block">Address is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
+                <label for="address2">Address2</label>
+                <input type="text" class="form-control" name="address2" [(ngModel)]="model.address2" #address2="ngModel" />
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel" required />
+                <div *ngIf="f.submitted && !city.valid" class="help-block">City is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !state.valid }">
+                <label for="state">State</label>
+                <input type="text" class="form-control" name="state" [(ngModel)]="model.state" #state="ngModel" required />
+                <div *ngIf="f.submitted && !state.valid" class="help-block">State is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" required />
+                <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
+            </div>
+
+            
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+                <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+            </div>
+    
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
+                <label for="Phone">Phone</label>
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" required />
+                <div *ngIf="f.submitted && !phoneNumber.valid" class="help-block">Phone number is required</div>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill1.valid }">
+                <label for="skill1">Skill 1</label>
+                <input type="text" class="form-control" name="skill1" [(ngModel)]="model.skill1" #skill1="ngModel" required />
+                <div *ngIf="f.submitted && !skill1.valid" class="help-block">Skill 1 is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill2.valid }">
+                <label for="skill2">Skill 2</label>
+                <input type="text" class="form-control" name="skill2" [(ngModel)]="model.skill2" #skill2="ngModel" required />
+                <div *ngIf="f.submitted && !skill2.valid" class="help-block">Skill 2 is required</div>
+            </div>
+            
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill3.valid }">
+                <label for="skill3">Skill 3</label>
+                <input type="text" class="form-control" name="skill3" [(ngModel)]="model.skill3" #skill3="ngModel" required />
+                <div *ngIf="f.submitted && !skill3.valid" class="help-block">Skill 3 is required</div>
+            </div>
+            
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !company.valid }">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" name="company" [(ngModel)]="model.company" #company="ngModel" required />
+                <div *ngIf="f.submitted && !company.valid" class="help-block">Company Name is required</div>
+            </div>
+            
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notes.valid }">
+                <label for="notes">Notes</label>
+                <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" #notes="ngModel" required />
+                <div *ngIf="f.submitted && !notes.valid" class="help-block">Notes are required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !type.valid }">
+                <label for="type">Type of Consultant</label>
+                <input type="text" class="form-control" name="type" [(ngModel)]="model.type" #type="ngModel" required />
+                <div *ngIf="f.submitted && !type.valid" class="help-block">Type is required</div>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !poc.valid }">
+                <label for="poc">Point of Contact</label>
+                <input type="text" class="form-control" name="poc" [(ngModel)]="model.poc" #poc="ngModel" required />
+                <div *ngIf="f.submitted && !poc.valid" class="help-block">Point of Contact is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !yearsexp.valid }">
+                <label for="yearsexp">Years of Experience</label>
+                <input type="text" class="form-control" name="yearsexp" [(ngModel)]="model.yearsexp" #yearsexp="ngModel" required />
+                <div *ngIf="f.submitted && !yearsexp.valid" class="help-block">Years of Exerpience are required</div>
+            </div>
+            
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !payrate.valid }">
+                <label for="payrate">Pay Rate</label>
+                <input type="text" class="form-control" name="payrate" [(ngModel)]="model.payrate" #payrate="ngModel" required />
+                <div *ngIf="f.submitted && !payrate.valid" class="help-block">Pay rate is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !billrate.valid }">
+                <label for="billrate">Bill Rate</label>
+                <input type="text" class="form-control" name="billrate" [(ngModel)]="model.billrate" #billrate="ngModel" required />
+                <div *ngIf="f.submitted && !billrate.valid" class="help-block">Billing rate is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !availabledate.valid }">
+                <label for="availabledate">Availability date</label>
+                <input type="text" class="form-control" name="availabledate" [(ngModel)]="model.availabledate" #availabledate="ngModel" required />
+                <div *ngIf="f.submitted && !availabledate.valid" class="help-block">Availability date is required</div>
             </div>
 
             <div class="form-group">
