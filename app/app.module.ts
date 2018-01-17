@@ -18,6 +18,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AddUserComponent } from './addUser/index';
+import { SearchComponent } from './search/index';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { AddUserComponent } from './addUser/index';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        AddUserComponent
+        AddUserComponent,
+        SearchComponent
     ],
     providers: [
         AppConfig,
