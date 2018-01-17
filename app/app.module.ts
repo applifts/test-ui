@@ -13,11 +13,12 @@ import { AppConfig } from './app.config';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { JwtInterceptor } from './_helpers/index';
-import { AlertService, AuthenticationService, UserService, PeopleService } from './_services/index';
+import { AlertService, AuthenticationService, UserService, PeopleService, CompanyService } from './_services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AddUserComponent } from './addUser/index';
+import { CompanyComponent } from './company/index';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { AddUserComponent } from './addUser/index';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        AddUserComponent
+        AddUserComponent,
+        CompanyComponent
     ],
     providers: [
         AppConfig,
@@ -46,6 +48,12 @@ import { AddUserComponent } from './addUser/index';
             multi: true
         },
         PeopleService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true
+        },
+        CompanyService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: JwtInterceptor,

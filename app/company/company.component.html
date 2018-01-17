@@ -1,0 +1,65 @@
+﻿<div class="col-md-6 col-md-offset-3">
+        <h2>Add Individual</h2>
+        <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                <label for="name">Company Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+                <div *ngIf="f.submitted && !name.valid" class="help-block">First Name is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
+                <label for="address1">Address1</label>
+                <input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required />
+                <div *ngIf="f.submitted && !address1.valid" class="help-block">Address is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
+                <label for="address2">Address2</label>
+                <input type="text" class="form-control" name="address2" [(ngModel)]="model.address2" #address2="ngModel" />
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel" required />
+                <div *ngIf="f.submitted && !city.valid" class="help-block">City is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !state.valid }">
+                <label for="state">State</label>
+                <input type="text" class="form-control" name="state" [(ngModel)]="model.state" #state="ngModel" required />
+                <div *ngIf="f.submitted && !state.valid" class="help-block">State is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" required />
+                <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
+                <label for="Phone">Phone</label>
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" required />
+                <div *ngIf="f.submitted && !phoneNumber.valid" class="help-block">Phone number is required</div>
+            </div>
+            
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notes.valid }">
+                <label for="notes">Notes</label>
+                <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" #notes="ngModel" required />
+                <div *ngIf="f.submitted && !notes.valid" class="help-block">Notes are required</div>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !poc.valid }">
+                <label for="poc">Point of Contact</label>
+                <input type="text" class="form-control" name="poc" [(ngModel)]="model.poc" #poc="ngModel" required />
+                <div *ngIf="f.submitted && !poc.valid" class="help-block">Point of Contact is required</div>
+            </div>
+
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Submit</button>
+                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <a [routerLink]="['/home']" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+    

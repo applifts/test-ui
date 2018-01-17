@@ -23,6 +23,7 @@ var index_5 = require("./home/index");
 var index_6 = require("./login/index");
 var index_7 = require("./register/index");
 var index_8 = require("./addUser/index");
+var index_9 = require("./company/index");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -40,7 +41,8 @@ var AppModule = /** @class */ (function () {
                 index_5.HomeComponent,
                 index_6.LoginComponent,
                 index_7.RegisterComponent,
-                index_8.AddUserComponent
+                index_8.AddUserComponent,
+                index_9.CompanyComponent
             ],
             providers: [
                 app_config_1.AppConfig,
@@ -54,6 +56,12 @@ var AppModule = /** @class */ (function () {
                     multi: true
                 },
                 index_4.PeopleService,
+                {
+                    provide: http_1.HTTP_INTERCEPTORS,
+                    useClass: index_3.JwtInterceptor,
+                    multi: true
+                },
+                index_4.CompanyService,
                 {
                     provide: http_1.HTTP_INTERCEPTORS,
                     useClass: index_3.JwtInterceptor,
