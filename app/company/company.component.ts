@@ -5,7 +5,7 @@ import { AlertService, PeopleService, CompanyService } from '../_services/index'
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'adduser.component.html'
+    templateUrl: 'company.component.html'
 })
 
 export class CompanyComponent {
