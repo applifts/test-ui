@@ -1,7 +1,8 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AlertService, PeopleService } from '../_services/index';
+import { AlertService, PeopleService, CompanyService } from '../_services/index';
+import { Company } from '../_models/index';
 
 @Component({
     moduleId: module.id,
@@ -11,11 +12,21 @@ import { AlertService, PeopleService } from '../_services/index';
 export class AddUserComponent {
     model: any = {};
     loading = false;
+    companies: Company[] = [];
 
     constructor(
         private router: Router,
         private alertService: AlertService,
-        private peopleService: PeopleService) { }
+        private peopleService: PeopleService,
+        private companyService: CompanyService) { }
+
+    ngOnInit() {
+        this.loadAllCompanies();
+    }
+
+    private loadAllCompanies() {
+        this.companyService.getAll().subscribe(companies => { this.companies = <any>companies; });
+    }
 
     submit() {
         this.loading = true;

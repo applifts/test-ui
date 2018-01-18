@@ -8,6 +8,16 @@
             - <a (click)="deleteUser(user.id)">Delete</a>
         </li>
     </ul>
+
+        <div>
+                <label>User List</label>
+                <div>
+                    <select [(ngModel)]="user">
+                        <option *ngFor="let user of users" value= {{user.id}}>{{user.username}}</option>
+                    </select>
+                </div>
+            </div>
+
     <p><a [routerLink]="['/login']">Logout</a></p>
     <p><a [routerLink]="['/adduser']">Add Individual</a></p>
     <p><a [routerLink]="['/company']">Add Company</a></p>

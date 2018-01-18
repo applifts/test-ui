@@ -11,4 +11,8 @@ export class CompanyService {
     create(company: Company) {
         return this.http.post(this.config.apiUrl + '/company', company);
     }
+
+    getAll() {
+        return this.http.get(this.config.apiUrl + '/company');
+    }
 }

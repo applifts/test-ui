@@ -13,13 +13,22 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var index_1 = require("../_services/index");
 var AddUserComponent = /** @class */ (function () {
-    function AddUserComponent(router, alertService, peopleService) {
+    function AddUserComponent(router, alertService, peopleService, companyService) {
         this.router = router;
         this.alertService = alertService;
         this.peopleService = peopleService;
+        this.companyService = companyService;
         this.model = {};
         this.loading = false;
+        this.companies = [];
     }
+    AddUserComponent.prototype.ngOnInit = function () {
+        this.loadAllCompanies();
+    };
+    AddUserComponent.prototype.loadAllCompanies = function () {
+        var _this = this;
+        this.companyService.getAll().subscribe(function (companies) { _this.companies = companies; });
+    };
     AddUserComponent.prototype.submit = function () {
         var _this = this;
         this.loading = true;
@@ -41,7 +50,8 @@ var AddUserComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [router_1.Router,
             index_1.AlertService,
-            index_1.PeopleService])
+            index_1.PeopleService,
+            index_1.CompanyService])
     ], AddUserComponent);
     return AddUserComponent;
 }());
