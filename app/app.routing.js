@@ -8,6 +8,7 @@ var index_4 = require("./_guards/index");
 var index_5 = require("./addUser/index");
 var index_6 = require("./search/index");
 var index_7 = require("./individuals/index");
+var index_8 = require("./companies/index");
 var appRoutes = [
     { path: '', component: index_1.HomeComponent, canActivate: [index_4.AuthGuard] },
     { path: 'login', component: index_2.LoginComponent },
@@ -15,6 +16,7 @@ var appRoutes = [
     { path: 'adduser', component: index_5.AddUserComponent },
     { path: 'search', component: index_6.SearchComponent },
     { path: 'individuals', component: index_7.IndividualsComponent },
+    { path: 'companies', component: index_8.CompaniesComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

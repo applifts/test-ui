@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/index';
 import { AddUserComponent } from './addUser/index';
 import { SearchComponent } from './search/index';
 import { IndividualsComponent } from './individuals/index';
+import { CompaniesComponent } from './companies/index';
 
 @NgModule({
     imports: [
@@ -36,7 +37,8 @@ import { IndividualsComponent } from './individuals/index';
         RegisterComponent,
         AddUserComponent,
         SearchComponent,
-        IndividualsComponent
+        IndividualsComponent,
+        CompaniesComponent
     ],
     providers: [
         AppConfig,

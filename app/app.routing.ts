@@ -7,6 +7,7 @@ import { AuthGuard } from './_guards/index';
 import { AddUserComponent } from './addUser/index';
 import { SearchComponent } from './search/index';
 import { IndividualsComponent } from './individuals/index';
+import { CompaniesComponent } from './companies/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'adduser', component: AddUserComponent },
     { path: 'search', component: SearchComponent },
     { path: 'individuals', component: IndividualsComponent },
+    { path: 'companies', component: CompaniesComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
