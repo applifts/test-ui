@@ -9,6 +9,7 @@ import { CompanyComponent } from './company/index';
 import { SearchComponent } from './search/index';
 import { IndividualsComponent } from './individuals/index';
 import { CompaniesComponent } from './companies/index';
+import { ForgottenPasswordComponent } from './forgottenpassword/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     { path: 'search', component: SearchComponent },
     { path: 'individuals', component: IndividualsComponent },
     { path: 'companies', component: CompaniesComponent },
+    { path: 'forgottenpassword', component: ForgottenPasswordComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
