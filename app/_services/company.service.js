@@ -23,6 +23,9 @@ var CompanyService = /** @class */ (function () {
     CompanyService.prototype.getAll = function () {
         return this.http.get(this.config.apiUrl + '/company');
     };
+    CompanyService.prototype.getById = function (id) {
+        return this.http.get(this.config.apiUrl + '/people/' + id);
+    };
     CompanyService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient, app_config_1.AppConfig])
