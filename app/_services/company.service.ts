@@ -17,6 +17,6 @@ export class CompanyService {
     }
 
     getById(id: number) {
-        return this.http.get(this.config.apiUrl + '/people/' + id);
+        return this.http.get(this.config.apiUrl + '/company/' + id);
     }
 }

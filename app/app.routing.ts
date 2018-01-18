@@ -11,6 +11,7 @@ import { IndividualsComponent } from './individuals/index';
 import { CompaniesComponent } from './companies/index';
 import { ForgottenPasswordComponent } from './forgottenpassword/index';
 import { IndividualProfileComponent } from './individualProfile/index';
+import { CompanyProfileComponent } from './companyProfile/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     { path: 'companies', component: CompaniesComponent },
     { path: 'forgottenpassword', component: ForgottenPasswordComponent },
     { path: 'individualProfile/:profile', component: IndividualProfileComponent },
+    { path: 'companyProfile/:companyProfile', component: CompanyProfileComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
