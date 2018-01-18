@@ -21,7 +21,7 @@ var CompanyService = /** @class */ (function () {
         return this.http.post(this.config.apiUrl + '/company/company', company);
     };
     CompanyService.prototype.getAll = function () {
-        return this.http.get(this.config.apiUrl + '/company/');
+        return this.http.get(this.config.apiUrl + '/company');
     };
     CompanyService = __decorate([
         core_1.Injectable(),

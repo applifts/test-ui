@@ -37,10 +37,10 @@ var AddUserComponent = /** @class */ (function () {
             _this.alertService.success('Individual added', true);
             _this.router.navigate(['/home']);
         }, function (error) {
-            _this.alertService.error(error);
-            console.log(error + "\t" + error._body + "\t" + error.message);
+            //this.alertService.error(error);
             //this.alertService.error(error._body);
-            //this.alertService.error(error.message);
+            _this.alertService.error(error.message);
+            console.log(error + "\t" + error._body + "\t" + error.message);
             _this.loading = false;
         });
     };

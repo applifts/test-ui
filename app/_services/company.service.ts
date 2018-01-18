@@ -13,6 +13,6 @@ export class CompanyService {
     }
 
     getAll() {
-        return this.http.get(this.config.apiUrl + '/company/');
+        return this.http.get(this.config.apiUrl + '/company');
     }
 }
