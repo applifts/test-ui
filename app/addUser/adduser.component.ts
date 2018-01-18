@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { AlertService, PeopleService, CompanyService } from '../_services/index';
 import { Company } from '../_models/index';
+import { People } from '../_models/people';
 
 @Component({
     moduleId: module.id,
@@ -40,6 +41,7 @@ export class AddUserComponent {
                     //this.alertService.error(error);
                     //this.alertService.error(error._body);
                     this.alertService.error(error.message);
+                    console.log(error + "\t" + error._body + "\t" + error.message);
                     this.loading = false;
                 });
     }
