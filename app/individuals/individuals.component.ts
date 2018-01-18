@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
@@ -6,10 +6,10 @@ import { UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'home.component.html'
+    templateUrl: 'individuals.component.html'
 })
 
-export class HomeComponent implements OnInit {
+export class IndividualsComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
 
