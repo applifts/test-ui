@@ -10,27 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var index_1 = require("../_services/index");
-var AlertComponent = /** @class */ (function () {
-    function AlertComponent(alertService) {
-        var _this = this;
+var SearchComponent = /** @class */ (function () {
+    function SearchComponent(router, alertService, peopleService) {
+        this.router = router;
         this.alertService = alertService;
-        // subscribe to alert messages
-        this.subscription = alertService.getMessage().subscribe(function (message) { _this.message = message; });
+        this.peopleService = peopleService;
+        this.model = {};
+        this.loading = false;
     }
-    AlertComponent.prototype.ngOnDestroy = function () {
-        // unsubscribe on destroy to prevent memory leaks
-        this.subscription.unsubscribe();
-    };
-    AlertComponent = __decorate([
+    SearchComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'alert',
-            templateUrl: 'alert.component.html'
+            templateUrl: 'search.component.html'
         }),
-        __metadata("design:paramtypes", [index_1.AlertService])
-    ], AlertComponent);
-    return AlertComponent;
+        __metadata("design:paramtypes", [router_1.Router,
+            index_1.AlertService,
+            index_1.PeopleService])
+    ], SearchComponent);
+    return SearchComponent;
 }());
-exports.AlertComponent = AlertComponent;
-//# sourceMappingURL=alert.component.js.map
+exports.SearchComponent = SearchComponent;
+//# sourceMappingURL=search.component.js.map

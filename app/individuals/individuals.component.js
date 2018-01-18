@@ -11,24 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent(userService) {
+var IndividualsComponent = /** @class */ (function () {
+    function IndividualsComponent(userService) {
         this.userService = userService;
         this.users = [];
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    IndividualsComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
     };
-    HomeComponent.prototype.deleteUser = function (id) {
+    IndividualsComponent.prototype.deleteUser = function (id) {
         var _this = this;
         this.userService.delete(id).subscribe(function () { _this.loadAllUsers(); });
     };
-    HomeComponent.prototype.loadAllUsers = function () {
+    IndividualsComponent.prototype.loadAllUsers = function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
     };
-    HomeComponent.prototype.filter = function () {
+    IndividualsComponent.prototype.filter = function () {
         var input, input2, filter, filter2, table, tr, td, td2, i, j, isInSearch;
         input = document.getElementById("myInput");
         input2 = document.getElementById("myInput2");
@@ -68,14 +68,14 @@ var HomeComponent = /** @class */ (function () {
             }
         }
     };
-    HomeComponent = __decorate([
+    IndividualsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'home.component.html'
+            templateUrl: 'individuals.component.html'
         }),
         __metadata("design:paramtypes", [index_1.UserService])
-    ], HomeComponent);
-    return HomeComponent;
+    ], IndividualsComponent);
+    return IndividualsComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.IndividualsComponent = IndividualsComponent;
+//# sourceMappingURL=individuals.component.js.map

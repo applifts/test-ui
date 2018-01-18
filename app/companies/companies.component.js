@@ -11,24 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent(userService) {
+var CompaniesComponent = /** @class */ (function () {
+    function CompaniesComponent(userService) {
         this.userService = userService;
         this.users = [];
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    CompaniesComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
     };
-    HomeComponent.prototype.deleteUser = function (id) {
+    CompaniesComponent.prototype.deleteUser = function (id) {
         var _this = this;
         this.userService.delete(id).subscribe(function () { _this.loadAllUsers(); });
     };
-    HomeComponent.prototype.loadAllUsers = function () {
+    CompaniesComponent.prototype.loadAllUsers = function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
     };
-    HomeComponent.prototype.filter = function () {
+    CompaniesComponent.prototype.filter = function () {
         var input, input2, filter, filter2, table, tr, td, td2, i, j, isInSearch;
         input = document.getElementById("myInput");
         input2 = document.getElementById("myInput2");
@@ -68,14 +68,14 @@ var HomeComponent = /** @class */ (function () {
             }
         }
     };
-    HomeComponent = __decorate([
+    CompaniesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'home.component.html'
+            templateUrl: 'companies.component.html'
         }),
         __metadata("design:paramtypes", [index_1.UserService])
-    ], HomeComponent);
-    return HomeComponent;
+    ], CompaniesComponent);
+    return CompaniesComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.CompaniesComponent = CompaniesComponent;
+//# sourceMappingURL=companies.component.js.map
