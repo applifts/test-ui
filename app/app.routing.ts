@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/index';
 import { AuthGuard } from './_guards/index';
 import { AddUserComponent } from './addUser/index';
 import { SearchComponent } from './search/index';
+import { IndividualsComponent } from './individuals/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'adduser', component: AddUserComponent },
     { path: 'search', component: SearchComponent },
+    { path: 'individuals', component: IndividualsComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

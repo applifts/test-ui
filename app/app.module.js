@@ -24,6 +24,7 @@ var index_6 = require("./login/index");
 var index_7 = require("./register/index");
 var index_8 = require("./addUser/index");
 var index_9 = require("./search/index");
+var index_10 = require("./individuals/index");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -42,7 +43,8 @@ var AppModule = /** @class */ (function () {
                 index_6.LoginComponent,
                 index_7.RegisterComponent,
                 index_8.AddUserComponent,
-                index_9.SearchComponent
+                index_9.SearchComponent,
+                index_10.IndividualsComponent
             ],
             providers: [
                 app_config_1.AppConfig,
