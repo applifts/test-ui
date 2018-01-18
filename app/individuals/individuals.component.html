@@ -5,35 +5,38 @@
     <table width="100%" class="table" id="myTable">
         <thead>
           <tr>
-              <th></th>
-              <th ><input class="form-control" type="text" id="myInput" (keyup)="filter()" placeholder="First name.." title="Type in a name"></th>
-              <th ><input class="form-control" type="text" id="myInput2" (keyup)="filter()" placeholder="Last name.." title="Type in a name"> </th>
-              <th ><input class="form-control" type="text" id="myInput3" (keyup)="filter()" placeholder="Last name.." title="Type in a name"> </th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th ><input class="form-control" type="text" id="myInput" (keyup)="filter()" placeholder="First name..." title="Type in a name"></th>
+              <th ><input class="form-control" type="text" id="myInput2" (keyup)="filter()" placeholder="Last name..." title="Type in a name"> </th>
+              <th ><input class="form-control" type="text" id="myInput3" (keyup)="filter()" placeholder="Type..." title="Type in a name"> </th>
+              <th ><input class="form-control" type="text" id="myInput4" (keyup)="filter()" placeholder="State..." title="Type in a name"> </th>
+              <th ><input class="form-control" type="text" id="myInput5" (keyup)="filter()" placeholder="Company..." title="Type in a name"> </th>
+              <th ><input class="form-control" type="text" id="myInput6" (keyup)="filter()" placeholder="Skill 1..." title="Skill 1"> </th>
+              <th ><input class="form-control" type="text" id="myInput7" (keyup)="filter()" placeholder="Skill 2..." title="Skill 2"> </th>
+              <th ><input class="form-control" type="text" id="myInput8" (keyup)="filter()" placeholder="Skill 3..." title="Skill 3"> </th>
               <th></th>
           </tr>
           <tr>
-            <th>ID</th>
             <th >First Name</th>
             <th>Last Name</th>
             <th>Type</th>
             <th>State</th>
             <th>Company</th>
-            <th>Skills</th>
+            <th>Skill 1</th>
+            <th>Skill 2</th>
+            <th>Skill 3</th>
             <th>Available On</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let person of people; let i = index">
-            <td>{{person.id}}</td>
             <td ><a [routerLink]="['/individualProfile', person.id]">{{person.firstName}}</a></td>
             <td>{{person.lastName}}</td>
             <td>{{person.type}}</td>
             <td>{{person.state}}</td>
             <td>{{person.company}}</td>
             <td>{{person.skill1}}</td>
+            <td>{{person.skill2}}</td>
+            <td>{{person.skill3}}</td>
             <td>{{person.availableDate}}</td>
           </tr>
         </tbody>
