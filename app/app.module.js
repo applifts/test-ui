@@ -27,6 +27,7 @@ var index_9 = require("./company/index");
 var index_10 = require("./search/index");
 var index_11 = require("./individuals/index");
 var index_12 = require("./companies/index");
+var index_13 = require("./individualProfile/index");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -48,7 +49,8 @@ var AppModule = /** @class */ (function () {
                 index_9.CompanyComponent,
                 index_10.SearchComponent,
                 index_11.IndividualsComponent,
-                index_12.CompaniesComponent
+                index_12.CompaniesComponent,
+                index_13.IndividualProfileComponent
             ],
             providers: [
                 app_config_1.AppConfig,

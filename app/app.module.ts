@@ -22,6 +22,7 @@ import { CompanyComponent } from './company/index';
 import { SearchComponent } from './search/index';
 import { IndividualsComponent } from './individuals/index';
 import { CompaniesComponent } from './companies/index';
+import { IndividualProfileComponent } from './individualProfile/index';
 
 @NgModule({
     imports: [
@@ -40,7 +41,8 @@ import { CompaniesComponent } from './companies/index';
         CompanyComponent,
         SearchComponent,
         IndividualsComponent,
-        CompaniesComponent
+        CompaniesComponent,
+        IndividualProfileComponent
     ],
     providers: [
         AppConfig,

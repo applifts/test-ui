@@ -10,6 +10,7 @@ var index_6 = require("./company/index");
 var index_7 = require("./search/index");
 var index_8 = require("./individuals/index");
 var index_9 = require("./companies/index");
+var index_10 = require("./individualProfile/index");
 var appRoutes = [
     { path: '', component: index_1.HomeComponent, canActivate: [index_4.AuthGuard] },
     { path: 'login', component: index_2.LoginComponent },
@@ -19,6 +20,7 @@ var appRoutes = [
     { path: 'search', component: index_7.SearchComponent },
     { path: 'individuals', component: index_8.IndividualsComponent },
     { path: 'companies', component: index_9.CompaniesComponent },
+    { path: 'individualProfile/:profile', component: index_10.IndividualProfileComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
