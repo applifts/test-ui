@@ -18,7 +18,7 @@ var PeopleService = /** @class */ (function () {
         this.config = config;
     }
     PeopleService.prototype.create = function (people) {
-        return this.http.post(this.config.apiUrl + '/people', people);
+        return this.http.post(this.config.apiUrl + '/people/people', people);
     };
     PeopleService.prototype.getAll = function () {
         return this.http.get(this.config.apiUrl + '/people');

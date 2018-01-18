@@ -40,6 +40,7 @@ var AddUserComponent = /** @class */ (function () {
             //this.alertService.error(error);
             //this.alertService.error(error._body);
             _this.alertService.error(error.message);
+            console.log(error + "\t" + error._body + "\t" + error.message);
             _this.loading = false;
         });
     };

@@ -9,7 +9,7 @@ export class CompanyService {
     constructor(private http: HttpClient, private config: AppConfig) { }
 
     create(company: Company) {
-        return this.http.post(this.config.apiUrl + '/company', company);
+        return this.http.post(this.config.apiUrl + '/company/company', company);
     }
 
     getAll() {

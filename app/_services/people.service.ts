@@ -9,7 +9,7 @@ export class PeopleService {
     constructor(private http: HttpClient, private config: AppConfig) { }
 
     create(people: People) {
-        return this.http.post(this.config.apiUrl + '/people', people);
+        return this.http.post(this.config.apiUrl + '/people/people', people);
     }
 
     getAll() {

@@ -74,13 +74,13 @@
                 <input type="text" class="form-control" name="skill3" [(ngModel)]="model.skill3" #skill3="ngModel" required />
                 <div *ngIf="f.submitted && !skill3.valid" class="help-block">Skill 3 is required</div>
             </div>
-            
+            <!--
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !company.valid }">
                 <label for="company">Company</label>
                 <input type="text" class="form-control" name="company" [(ngModel)]="model.company" #company="ngModel" required />
                 <div *ngIf="f.submitted && !company.valid" class="help-block">Company Name is required</div>
             </div>
-            <!--
+            
             <div>
                 <label>Company List</label>
                 <div>
@@ -91,6 +91,13 @@
             </div>
             -->
             
+            <div class="form-group">
+                <label>Company List</label>
+                <select [(ngModel)]="model.company" [ngModelOptions]="{standalone: true}" #company="ngModel" required>
+                    <option *ngFor="let company of companies" value= {{company.name}}>{{company.name}}</option>
+                </select>
+            </div>
+
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notes.valid }">
                 <label for="notes">Notes</label>
                 <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" #notes="ngModel" required />
