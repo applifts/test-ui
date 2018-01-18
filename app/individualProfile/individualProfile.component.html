@@ -1,32 +1,20 @@
 <div>
     <h1>{{person.firstName}} {{person.lastName}}</h1>
     <table class="table" id="myTable">
-        <thead>
-          <tr>
-            <th>Address</th>
-            <th>Last Name</th>
-          </tr>
-        </thead>
-        <tbody >
-          <tr>
-            <td>{{person.address1}} <br/>{{person.address2}}</td>
-            <td>{{person.city}}, {{person.state}}</td>
-            <td>{{person.zipcode}}</td>
-            <td>{{person.email}}</td>
-            <td>{{person.phoneNumber}}</td>
-            <td>{{person.skill1}},{{person.skill2}}, {{person.skill3}} </td>
-            <td>{{person.company}}</td>
-            <td>{{person.notes}}</td>
-            <td>{{person.type}}</td>
-            <td>{{person.poc}}</td>
-            <td>{{person.yearsExp}}</td>
-            <td> ${{person.payRate}}</td>
-            <td> ${{person.billRate}}</td>
-            <td>{{person.availableDate}}</td>
-            
-          </tr>
-        </tbody>
-      </table>
-
-    
+      <tr><b>Address:</b> {{person.address1}} <br/>{{person.address2}}</tr>
+      <tr><b>City: </b>{{person.city}}</tr>
+      <tr><b>State: </b>{{person.state}}</tr>
+      <tr><b>Zip: </b>{{person.zipcode}}</tr>
+      <tr><b>Email:</b> {{person.email}}</tr>
+      <tr><b>Phone Number:</b> {{person.phoneNumber}}</tr>
+      <tr><b>Skills: </b>{{person.skill1}},{{person.skill2}}, {{person.skill3}} </tr>
+      <tr><b>Company: </b>{{person.company}}</tr>
+      <tr><b>Notes: </b>{{person.notes}}</tr>
+      <tr><b>Type of Consultant: </b>{{person.type}}</tr>
+      <tr><b>Point of Contact: </b>{{person.poc}}</tr>
+      <tr><b>Years of Experience: </b>{{person.yearsExp}}</tr>
+      <tr><b>Payrate: </b>${{person.payRate}}</tr>
+      <tr><b>Billrate:  </b>${{person.billRate}}</tr>
+      <tr><b>Availability Date:</b> {{person.availableDate}}</tr>
+    </table>    
 </div>
