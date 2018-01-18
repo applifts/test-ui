@@ -12,51 +12,49 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
 var CompaniesComponent = /** @class */ (function () {
-    function CompaniesComponent(userService) {
-        this.userService = userService;
-        this.users = [];
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    function CompaniesComponent(companyService) {
+        this.companyService = companyService;
+        this.companies = [];
     }
     CompaniesComponent.prototype.ngOnInit = function () {
-        this.loadAllUsers();
+        this.loadAllCompanies();
     };
-    CompaniesComponent.prototype.deleteUser = function (id) {
+    CompaniesComponent.prototype.loadAllCompanies = function () {
         var _this = this;
-        this.userService.delete(id).subscribe(function () { _this.loadAllUsers(); });
-    };
-    CompaniesComponent.prototype.loadAllUsers = function () {
-        var _this = this;
-        this.userService.getAll().subscribe(function (users) { _this.users = users; });
+        this.companyService.getAll().subscribe(function (companies) { _this.companies = companies; });
     };
     CompaniesComponent.prototype.filter = function () {
-        var input, input2, filter, filter2, table, tr, td, td2, i, j, isInSearch;
+        var input, input2, input3, input4;
+        var filter, filter2, filter3, filter4;
+        var td, td2, td3, td4;
+        var table, tr, i, j, isInSearch;
+        var re = /<.*>(.*)<.*>/;
         input = document.getElementById("myInput");
         input2 = document.getElementById("myInput2");
+        input3 = document.getElementById("myInput3");
+        input4 = document.getElementById("myInput4");
         filter = input.value.toUpperCase();
         filter2 = input2.value.toUpperCase();
+        filter3 = input3.value.toUpperCase();
+        filter4 = input4.value.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
             isInSearch = false;
-            /* for (j = 0; j < tr[i].getElementsByTagName("td").length; j++) {
-                td = tr[i].getElementsByTagName("td")[j];
-                if (td) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        isInSearch = true;
-                      }
-                }
-            }
-            if (isInSearch) {
-                tr[i].style.display = "";
-            }
-            else if (td) {
-                tr[i].style.display = "none";
-            } */
-            td = tr[i].getElementsByTagName("td")[2];
-            td2 = tr[i].getElementsByTagName("td")[3];
+            td = tr[i].getElementsByTagName("td")[0];
+            td2 = tr[i].getElementsByTagName("td")[1];
+            td3 = tr[i].getElementsByTagName("td")[2];
+            td4 = tr[i].getElementsByTagName("td")[3];
             if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1 && td2.innerHTML.toUpperCase().indexOf(filter2) > -1) {
+                var first = td.innerHTML.toUpperCase().replace(re, "$1");
+                var second = td2.innerHTML.toUpperCase().replace(re, "$1");
+                var third = td3.innerHTML.toUpperCase().replace(re, "$1");
+                var fourth = td4.innerHTML.toUpperCase().replace(re, "$1");
+                if (first.indexOf(filter) > -1 &&
+                    second.indexOf(filter2) > -1 &&
+                    third.indexOf(filter3) > -1 &&
+                    fourth.indexOf(filter4) > -1) {
                     isInSearch = true;
                 }
             }
@@ -73,7 +71,7 @@ var CompaniesComponent = /** @class */ (function () {
             moduleId: module.id,
             templateUrl: 'companies.component.html'
         }),
-        __metadata("design:paramtypes", [index_1.UserService])
+        __metadata("design:paramtypes", [index_1.CompanyService])
     ], CompaniesComponent);
     return CompaniesComponent;
 }());
