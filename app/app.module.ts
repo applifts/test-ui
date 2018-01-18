@@ -24,6 +24,7 @@ import { IndividualsComponent } from './individuals/index';
 import { CompaniesComponent } from './companies/index';
 import { ForgottenPasswordComponent } from './forgottenpassword/index';
 
+import { IndividualProfileComponent } from './individualProfile/index';
 
 @NgModule({
     imports: [
@@ -43,7 +44,8 @@ import { ForgottenPasswordComponent } from './forgottenpassword/index';
         SearchComponent,
         IndividualsComponent,
         CompaniesComponent,
-        ForgottenPasswordComponent
+        ForgottenPasswordComponent,
+        IndividualProfileComponent
     ],
     providers: [
         AppConfig,

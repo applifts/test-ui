@@ -11,4 +11,12 @@ export class PeopleService {
     create(people: People) {
         return this.http.post(this.config.apiUrl + '/people/people', people);
     }
+
+    getAll() {
+        return this.http.get(this.config.apiUrl + '/people');
+    }
+
+    getById(id: number) {
+        return this.http.get(this.config.apiUrl + '/people/' + id);
+    }
 }

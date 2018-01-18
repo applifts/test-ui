@@ -11,53 +11,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
-var index_2 = require("../_services/index");
-var IndividualsComponent = /** @class */ (function () {
-    function IndividualsComponent(userService, peopleService) {
+var router_1 = require("@angular/router");
+var IndividualProfileComponent = /** @class */ (function () {
+    function IndividualProfileComponent(userService, route, router) {
         this.userService = userService;
-        this.peopleService = peopleService;
+        this.route = route;
+        this.router = router;
         this.users = [];
-        this.people = [];
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
-    IndividualsComponent.prototype.ngOnInit = function () {
+    IndividualProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.loadAllUsers();
-        this.loadAllPeople();
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.displayedUser = params['profile'];
+        });
     };
-    IndividualsComponent.prototype.deleteUser = function (id) {
+    IndividualProfileComponent.prototype.deleteUser = function (id) {
         var _this = this;
         this.userService.delete(id).subscribe(function () { _this.loadAllUsers(); });
     };
-    IndividualsComponent.prototype.loadAllUsers = function () {
+    IndividualProfileComponent.prototype.loadAllUsers = function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
     };
-    IndividualsComponent.prototype.loadAllPeople = function () {
-        var _this = this;
-        this.peopleService.getAll().subscribe(function (people) { _this.people = people; });
-    };
-    IndividualsComponent.prototype.filter = function () {
-        var input, input2, input3, filter, filter2, filter3, table, tr, td, td2, td3, i, j, isInSearch, start;
-        var re = /<.*>(.*)<.*>/;
+    IndividualProfileComponent.prototype.filter = function () {
+        var input, input2, filter, filter2, table, tr, td, td2, i, j, isInSearch;
         input = document.getElementById("myInput");
         input2 = document.getElementById("myInput2");
-        input3 = document.getElementById("myInput3");
         filter = input.value.toUpperCase();
         filter2 = input2.value.toUpperCase();
-        filter3 = input3.value.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < tr.length; i++) {
             isInSearch = false;
-            td = tr[i].getElementsByTagName("td")[1];
-            td2 = tr[i].getElementsByTagName("td")[2];
-            td3 = tr[i].getElementsByTagName("td")[3];
+            /* for (j = 0; j < tr[i].getElementsByTagName("td").length; j++) {
+                td = tr[i].getElementsByTagName("td")[j];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        isInSearch = true;
+                      }
+                }
+            }
+            if (isInSearch) {
+                tr[i].style.display = "";
+            }
+            else if (td) {
+                tr[i].style.display = "none";
+            } */
+            td = tr[i].getElementsByTagName("td")[2];
+            td2 = tr[i].getElementsByTagName("td")[3];
             if (td) {
-                var first = td.innerHTML.toUpperCase().replace(re, "$1");
-                var second = td2.innerHTML.toUpperCase().replace(re, "$1");
-                var third = td3.innerHTML.toUpperCase().replace(re, "$1");
-                if (first.indexOf(filter) > -1 && second.indexOf(filter2) > -1 && third.indexOf(filter3) > -1) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1 && td2.innerHTML.toUpperCase().indexOf(filter2) > -1) {
                     isInSearch = true;
                 }
             }
@@ -69,14 +75,17 @@ var IndividualsComponent = /** @class */ (function () {
             }
         }
     };
-    IndividualsComponent = __decorate([
+    IndividualProfileComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    IndividualProfileComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'individuals.component.html'
+            templateUrl: 'individualProfile.component.html'
         }),
-        __metadata("design:paramtypes", [index_1.UserService, index_2.PeopleService])
-    ], IndividualsComponent);
-    return IndividualsComponent;
+        __metadata("design:paramtypes", [index_1.UserService, router_1.ActivatedRoute, router_1.Router])
+    ], IndividualProfileComponent);
+    return IndividualProfileComponent;
 }());
-exports.IndividualsComponent = IndividualsComponent;
-//# sourceMappingURL=individuals.component.js.map
+exports.IndividualProfileComponent = IndividualProfileComponent;
+//# sourceMappingURL=individualProfile.component.js.map
