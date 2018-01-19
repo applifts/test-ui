@@ -3,7 +3,7 @@
         <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid }">
                 <label for="firstname">First Name</label>
-                <input type="text" class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required />
+                <input type="text" autofocus class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required />
                 <div *ngIf="f.submitted && !firstname.valid" class="help-block">First Name is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid }">
