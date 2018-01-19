@@ -41,6 +41,7 @@
                 <label for="Phone">Phone</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" required />
                 <div *ngIf="f.submitted && !phoneNumber.valid" class="help-block">Phone number is required</div>
+                <label style = "color:rgb(114, 103, 102)">ex: 123-456-7890</label>
             </div>
             
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notes.valid }">
