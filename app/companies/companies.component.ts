@@ -40,6 +40,8 @@ export class CompaniesComponent implements OnInit {
         filter2 = input2.value.toUpperCase();
         filter3 = input3.value.toUpperCase();
         filter4 = input4.value.toUpperCase();
+
+        
     
         
         table = document.getElementById("myTable");
@@ -60,12 +62,17 @@ export class CompaniesComponent implements OnInit {
                 var second = td2.innerHTML.toUpperCase().replace(re, "$1");
                 var third = td3.innerHTML.toUpperCase().replace(re, "$1");
                 var fourth = td4.innerHTML.toUpperCase().replace(re, "$1");
+
+                var firstRegex = new RegExp("^" + filter);
+                var secondRegex = new RegExp("^" + filter2);
+                var thirdRegex = new RegExp("^" + filter3);
+                var fourthRegex = new RegExp("^" + filter4);
             
                 
-                if (first.indexOf(filter) > -1 && 
-                second.indexOf(filter2) > -1 && 
-                third.indexOf(filter3) > -1 && 
-                fourth.indexOf(filter4) > -1 )
+                if (first.search(firstRegex) > -1 && 
+                second.search(secondRegex) > -1 && 
+                third.search(thirdRegex) > -1 && 
+                fourth.search(fourthRegex) > -1 )
                   {
                     isInSearch = true;
                   } 
