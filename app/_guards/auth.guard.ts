@@ -9,14 +9,18 @@ export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+
+        
         if (localStorage.getItem('currentUser')) {
+            
             // check if token expired
             let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-            if(this.jwtHelper.isTokenExpired(currentUser.token)){
-                this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
-                return false;
-            }
+           // if(this.jwtHelper.isTokenExpired(currentUser.token)){
+                
+             //   this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+               // return false;
+            //}
 
             // logged in so return true
             return true;
