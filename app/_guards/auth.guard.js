@@ -21,10 +21,10 @@ var AuthGuard = /** @class */ (function () {
         if (localStorage.getItem('currentUser')) {
             // check if token expired
             var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            if (this.jwtHelper.isTokenExpired(currentUser.token)) {
-                this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-                return false;
-            }
+            // if(this.jwtHelper.isTokenExpired(currentUser.token)){
+            //   this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+            // return false;
+            //}
             // logged in so return true
             return true;
         }
