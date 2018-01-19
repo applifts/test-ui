@@ -16,7 +16,7 @@
         <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid }">
                 <label for="firstname">First Name</label>  <label style="color:#e32">*</label>
-                <input type="text" autofocus class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required /> 
+                <input type="text" ng-pattern ="/^[a-zA-Z\s]*$/" autofocus class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required /> 
                 <div *ngIf="f.submitted && !firstname.valid" class="help-block">First Name is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid }">
@@ -48,7 +48,7 @@
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
                 <label for="zipcode">Zip Code</label>
-                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" value="" />
+                <input type="number" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" value="" />
                 <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
                 <label style = "color:rgb(114, 103, 102)">ex: 12345</label>
             
@@ -105,11 +105,18 @@
                 <div *ngIf="f.submitted && !notes.valid" class="help-block">Notes are required</div>
             </div>
 
+            <!-- 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !type.valid }">
                 <label for="type">Type of Consultant</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="type" [(ngModel)]="model.type" #type="ngModel" required />
                 <div *ngIf="f.submitted && !type.valid" class="help-block">Type is required</div>
             </div>
+-->
+
+            <fieldset class="form-group">
+                    <label for="type">Type of Consultant</label><label style="color:#e32">*</label>
+                    <select id="type" name="type" [(ngModel)]="model.type" #state="ngModel"><option value="---">---</option><option value="Crew 212">Crew 212</option> <option value="Core Consultant">Core Consultant</option> <option value="Contact">Contact</option> <option value="Potential Candidate">Potential Candidate</option></select>
+                </fieldset>
 
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !poc.valid }">
@@ -120,20 +127,20 @@
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !yearsexp.valid }">
                 <label for="yearsexp">Years of Experience</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="yearsexp" [(ngModel)]="model.yearsexp" #yearsexp="ngModel" required />
+                <input type="number" class="form-control" name="yearsexp" [(ngModel)]="model.yearsexp" #yearsexp="ngModel" required />
                 <div *ngIf="f.submitted && !yearsexp.valid" class="help-block">Years of Exerpience are required</div>
             </div>
             
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !payrate.valid }">
                 <label for="payrate">Pay Rate</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="payrate" [(ngModel)]="model.payrate" #payrate="ngModel" required />
+                <input type="number" class="form-control" name="payrate" [(ngModel)]="model.payrate" #payrate="ngModel" required />
                 <div *ngIf="f.submitted && !payrate.valid" class="help-block">Pay rate is required</div>
                 <label style = "color:rgb(114, 103, 102)">ex: 650000 or 650000.00</label>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !billrate.valid }">
                 <label for="billrate">Bill Rate</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="billrate" [(ngModel)]="model.billrate" #billrate="ngModel" required />
+                <input type="number" class="form-control" name="billrate" [(ngModel)]="model.billrate" #billrate="ngModel" required />
                 <div *ngIf="f.submitted && !billrate.valid" class="help-block">Billing rate is required</div>
                 <label style = "color:rgb(114, 103, 102)">ex: 650000 or 650000.00</label>
             </div>

@@ -33,7 +33,7 @@
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
                 <label for="zipcode">Zip Code</label>
-                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" value="" />
+                <input type="number" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" value="" />
                 <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
             </div>
 
