@@ -80,15 +80,23 @@ var IndividualsComponent = /** @class */ (function () {
                 var sixth = td6.innerHTML.toUpperCase().replace(re, "$1");
                 var seventh = td7.innerHTML.toUpperCase().replace(re, "$1");
                 var eigth = td8.innerHTML.toUpperCase().replace(re, "$1");
+                var firstRegex = new RegExp("^" + filter);
+                var secondRegex = new RegExp("^" + filter2);
+                var thirdRegex = new RegExp("^" + filter3);
+                var fourthRegex = new RegExp("^" + filter4);
+                var fifthRegex = new RegExp("^" + filter5);
+                var sixthRegex = new RegExp("^" + filter6);
+                var seventhRegex = new RegExp("^" + filter7);
+                var eigthRegex = new RegExp("^" + filter8);
                 console.log(sixth);
-                if (first.indexOf(filter) > -1 &&
-                    second.indexOf(filter2) > -1 &&
-                    third.indexOf(filter3) > -1 &&
-                    fourth.indexOf(filter4) > -1 &&
-                    fifth.indexOf(filter5) > -1 &&
-                    sixth.indexOf(filter6) > -1 &&
-                    seventh.indexOf(filter7) > -1 &&
-                    eigth.indexOf(filter8) > -1) {
+                if (first.search(firstRegex) > -1 &&
+                    second.search(secondRegex) > -1 &&
+                    third.search(thirdRegex) > -1 &&
+                    fourth.search(fourthRegex) > -1 &&
+                    fifth.search(fifthRegex) > -1 &&
+                    sixth.search(sixthRegex) > -1 &&
+                    seventh.search(seventhRegex) > -1 &&
+                    eigth.search(eigthRegex) > -1) {
                     isInSearch = true;
                 }
             }
