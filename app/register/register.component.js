@@ -26,7 +26,7 @@ var RegisterComponent = /** @class */ (function () {
         this.userService.create(this.model)
             .subscribe(function (data) {
             _this.alertService.success('Registration successful', true);
-            _this.router.navigate(['/login']);
+            _this.router.navigate(['/home']);
         }, function (error) {
             //this.alertService.error(error);
             //this.alertService.error(error._body);

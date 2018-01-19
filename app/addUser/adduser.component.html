@@ -25,8 +25,8 @@
                 <div *ngIf="f.submitted && !lastname.valid" class="help-block">Last Name is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
-                <label for="address1">Address1</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required />
+                <label for="address1">Address1</label>
+                <input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" #address1="ngModel" value="" />
                 <div *ngIf="f.submitted && !address1.valid" class="help-block">Address is required</div>
             </div>
 
@@ -36,8 +36,8 @@
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
-                <label for="city">City</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel" required />
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel" value="" />
                 <div *ngIf="f.submitted && !city.valid" class="help-block">City is required</div>
             </div>
 
@@ -47,8 +47,8 @@
                 </fieldset>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
-                <label for="zipcode">Zip Code</label><label style="color:#e32">*</label>
-                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" required />
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" value="" />
                 <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
                 <label style = "color:rgb(114, 103, 102)">ex: 12345</label>
             
