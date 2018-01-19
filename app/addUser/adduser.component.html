@@ -1,18 +1,31 @@
-﻿<div class="col-md-6 col-md-offset-3">
+﻿<style>
+       .required label {
+    font-weight: bold;
+}
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+</style>​
+
+<div class="col-md-6 col-md-offset-3">
+
+
         <h2>Add Individual</h2>
         <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid }">
-                <label for="firstname">First Name</label>
-                <input type="text" autofocus class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required />
+                <label for="firstname">First Name</label>  <label style="color:#e32">*</label>
+                <input type="text" autofocus class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required /> 
                 <div *ngIf="f.submitted && !firstname.valid" class="help-block">First Name is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid }">
-                <label for="lastname">Last Name</label>
+                <label for="lastname">Last Name</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" required />
                 <div *ngIf="f.submitted && !lastname.valid" class="help-block">Last Name is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address1.valid }">
-                <label for="address1">Address1</label>
+                <label for="address1">Address1</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required />
                 <div *ngIf="f.submitted && !address1.valid" class="help-block">Address is required</div>
             </div>
@@ -23,13 +36,13 @@
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
-                <label for="city">City</label>
+                <label for="city">City</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel" required />
                 <div *ngIf="f.submitted && !city.valid" class="help-block">City is required</div>
             </div>
 
             <fieldset class="form-group">
-                <label for="state">State</label>
+                <label for="state">State</label><label style="color:#e32">*</label>
 	    		<select id="state" name="state" [(ngModel)]="model.state" #state="ngModel"><option value="---">---</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Guam">Guam</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
             </fieldset>
 
@@ -37,62 +50,46 @@
             
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid }">
-                <label for="zipcode">Zip Code</label>
+                <label for="zipcode">Zip Code</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" required />
                 <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip Code is required</div>
             </div>
 
             
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
-                <label for="email">Email</label>
+                <label for="email">Email</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
                 <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
             </div>
     
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted}">
-                <label for="Phone">Phone</label>
+                <label for="Phone">Phone</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" required />
                 <div *ngIf="f.submitted && !phoneNumber.valid" class="help-block">Phone number is required</div>
             </div>
 
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill1.valid }">
-                <label for="skill1">Skill 1</label>
+                <label for="skill1">Skill 1</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="skill1" [(ngModel)]="model.skill1" #skill1="ngModel" required />
                 <div *ngIf="f.submitted && !skill1.valid" class="help-block">Skill 1 is required</div>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill2.valid }">
                 <label for="skill2">Skill 2</label>
-                <input type="text" class="form-control" name="skill2" [(ngModel)]="model.skill2" #skill2="ngModel" required />
+                <input type="text" class="form-control" name="skill2" [(ngModel)]="model.skill2" #skill2="ngModel" value ="" />
                 <div *ngIf="f.submitted && !skill2.valid" class="help-block">Skill 2 is required</div>
             </div>
             
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !skill3.valid }">
                 <label for="skill3">Skill 3</label>
-                <input type="text" class="form-control" name="skill3" [(ngModel)]="model.skill3" #skill3="ngModel" required />
+                <input type="text" class="form-control" name="skill3" [(ngModel)]="model.skill3" #skill3="ngModel"  value =""/>
                 <div *ngIf="f.submitted && !skill3.valid" class="help-block">Skill 3 is required</div>
             </div>
-            <!--
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !company.valid }">
-                <label for="company">Company</label>
-                <input type="text" class="form-control" name="company" [(ngModel)]="model.company" #company="ngModel" required />
-                <div *ngIf="f.submitted && !company.valid" class="help-block">Company Name is required</div>
-            </div>
-            
-            <div>
-                <label>Company List</label>
-                <div>
-                    <select [(ngModel)]="company">
-                        <option *ngFor="let company of companies" >{{company.name}}</option>
-                    </select>
-                </div>
-            </div>
-            -->
             
             <div class="form-group">
-                <label>Company List</label>
+                <label>Company List</label><label style="color:#e32">*</label>
                 <select [(ngModel)]="model.company" [ngModelOptions]="{standalone: true}" #company="ngModel" required>
                     <option *ngFor="let company of companies" value= {{company.name}}>{{company.name}}</option>
                 </select>
@@ -100,43 +97,43 @@
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notes.valid }">
                 <label for="notes">Notes</label>
-                <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" #notes="ngModel" required />
+                <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" #notes="ngModel" value=" " />
                 <div *ngIf="f.submitted && !notes.valid" class="help-block">Notes are required</div>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !type.valid }">
-                <label for="type">Type of Consultant</label>
+                <label for="type">Type of Consultant</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="type" [(ngModel)]="model.type" #type="ngModel" required />
                 <div *ngIf="f.submitted && !type.valid" class="help-block">Type is required</div>
             </div>
 
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !poc.valid }">
-                <label for="poc">Point of Contact</label>
+                <label for="poc">Point of Contact</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="poc" [(ngModel)]="model.poc" #poc="ngModel" required />
                 <div *ngIf="f.submitted && !poc.valid" class="help-block">Point of Contact is required</div>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !yearsexp.valid }">
-                <label for="yearsexp">Years of Experience</label>
+                <label for="yearsexp">Years of Experience</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="yearsexp" [(ngModel)]="model.yearsexp" #yearsexp="ngModel" required />
                 <div *ngIf="f.submitted && !yearsexp.valid" class="help-block">Years of Exerpience are required</div>
             </div>
             
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !payrate.valid }">
-                <label for="payrate">Pay Rate</label>
+                <label for="payrate">Pay Rate</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="payrate" [(ngModel)]="model.payrate" #payrate="ngModel" required />
                 <div *ngIf="f.submitted && !payrate.valid" class="help-block">Pay rate is required</div>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !billrate.valid }">
-                <label for="billrate">Bill Rate</label>
+                <label for="billrate">Bill Rate</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="billrate" [(ngModel)]="model.billrate" #billrate="ngModel" required />
                 <div *ngIf="f.submitted && !billrate.valid" class="help-block">Billing rate is required</div>
             </div>
 
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !availabledate.valid }">
-                <label for="availabledate">Availability date</label>
+                <label for="availabledate">Availability date</label><label style="color:#e32">*</label>
                 <input type="text" class="form-control" name="availabledate" [(ngModel)]="model.availabledate" #availabledate="ngModel" required />
                 <div *ngIf="f.submitted && !availabledate.valid" class="help-block">Availability date is required</div>
             </div>
